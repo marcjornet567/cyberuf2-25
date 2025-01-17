@@ -8,7 +8,7 @@ then
 	exit 100
 fi
 
-PORT = 7777
+PORT=7777
 IP_SERVER=$1
 
 IP_CLIENT=`ip a | grep -i inet | grep -i global | awk '{print $2}' | cut -d "/" -f 1` 
@@ -17,7 +17,7 @@ DATA=`nc -l $PORT`
 
 echo "LSTP Client"
 echo "1. SEND HEADER" 
-echo "LSTP_1" | nc $IP_SERVER $PORT 
+echo "LSTP_1" | nc $IP_SERVER $PORT
 
 echo "2. LISTEN OK_HEADER" 
 DATA=`nc -l $PORT`
@@ -29,8 +29,8 @@ then
 	echo "ERROR 1: HEADER enviado incorrectamente"
     exit 1 
 fi 
-#c client / lechuga.lechu | text2wave - o client / lechuga.wav
-#yes | ffmpeg - i client / lechuga.wav client / lechuga.ogg
+ client / lechuga.lechu | text2wave - o client / lechuga.wav
+ yes | ffmpeg - i client / lechuga.wav client / lechuga.ogg
 
 echo "7. SEND FILE_NAME"
 
